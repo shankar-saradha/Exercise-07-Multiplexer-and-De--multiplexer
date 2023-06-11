@@ -53,36 +53,69 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 
 ### PROGRAM 
 /*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+## Program for flipflops  and verify its truth table in quartus using Verilog programming.
+## Developed by: Shankar SS
+## RegisterNumber: 212221240052
 */
-
-
-
-
-
-
+## 4-1 MULTIPLEXER
+```
+module mux(i0, i1, i2, i3, s0, s1, y);
+input i0, i1, i2, i3, s0, s1;
+output y;
+wire p, q, r, s, s0c, s1c;
+not(s0c, s0);
+nor(s1c, s1);
+and(p, s0c, s1c, i0);
+and(q, s0c, s1, i1);
+and(r, s0, s1c, i2);
+and(s, s0, s1, i3);
+or(y, p, q, r, s);
+endmodule
+```
+## 1-4 DEMULTIPLEXER
+```
+module demux(y0, y1, y2, y3, s0, s1, i);
+input s0, s1, i;
+output y0, y1, y2, y3;
+wire s0c, s1c;
+nor(s0c, s0);
+nor(s1c, s1);
+and(y0, i, s0c, s1);
+and(y1, i, s0c, s1c);
+and(y2, i, s0, s1c);
+and(y3, i, s0, s1);
+endmodule
+```
 ### RTL LOGIC  
+## MULTIPLEXER
+![image](https://github.com/Vineesh-AI-DS/Exercise-07-Multiplexer-and-De-multiplexer/assets/93427254/d243421e-e725-47ee-94dd-80bf262407d1)
+
+
+
+## DEMULTIPLEXER
+![image](https://github.com/Vineesh-AI-DS/Exercise-07-Multiplexer-and-De-multiplexer/assets/93427254/e6b00284-ee38-4943-9776-36a9c43f69cb)
 
 
 
 
+## TIMING DIGRAMS
+## MULTIPLEXER
+![image](https://github.com/Vineesh-AI-DS/Exercise-07-Multiplexer-and-De-multiplexer/assets/93427254/e5480f09-ae7e-439d-b20b-f8babe2cf601)
 
 
 
-
-### TIMING DIGRAMS  
-
-
+## DEMULTIPLEXER
+![image](https://github.com/Vineesh-AI-DS/Exercise-07-Multiplexer-and-De-multiplexer/assets/93427254/0db4d348-e63e-4254-a28d-766e52afbf6e)
 
 
 
-### TRUTH TABLE 
+## TRUTH TABLE
+## MULTIPLEXER
+![image](https://github.com/Vineesh-AI-DS/Exercise-07-Multiplexer-and-De-multiplexer/assets/93427254/32e4f452-5b91-4855-a3c6-b59284cdfc40)
 
 
 
-
-
-
+## DEMULTIPLEXER
+![image](https://github.com/Vineesh-AI-DS/Exercise-07-Multiplexer-and-De-multiplexer/assets/93427254/33b75f46-6e0b-4b08-b18b-cf6d409229bb)
 ### RESULTS 
+Thus the implementation of Multiplexer and Demultiplexer are verified.
