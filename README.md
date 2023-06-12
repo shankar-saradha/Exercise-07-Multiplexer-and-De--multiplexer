@@ -47,16 +47,27 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+step1:
+Create a project with required entities.
+
+step2:
+Create a module along with respective file name for both Multiplexer and De-multiplexer.
+
+step3:
+Run the module and get the respective RTL outputs.
+
+step4:
+Create university program(VWF) for getting timing diagram.
+
+step5:
+Give the respective inputs for timing diagram and obtain the results.
 
 
 
 ### PROGRAM 
-/*
 ## Program for flipflops  and verify its truth table in quartus using Verilog programming.
 ## Developed by: Shankar SS
 ## RegisterNumber: 212221240052
-*/
 ## 4-1 MULTIPLEXER
 ```
 module mux(i0, i1, i2, i3, s0, s1, y);
